@@ -1,0 +1,5 @@
+pandas==1.4.4
+fastapi==0.87.0
+elasticsearch==7.9.1
+sentence-transformers==2.2.2
+nltk==3.7
