@@ -3,6 +3,7 @@
 
 
 ## Technologies Used
+- **Docker**
 - **Elastic Search**
 - **FastAPI**
 - **SBERT**
