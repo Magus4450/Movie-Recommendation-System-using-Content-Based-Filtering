@@ -24,10 +24,10 @@
     pip install -r requirements.txt
     ```
 
-3. Create a .env file to store environment variables. Add following variables 
+3. Create a .secrets.toml file to store environment variables. Add following variables 
     ```bash
-    ELASTICSEARCH_USERNAME = {username}
-    ELASTICSEARCH_PASSWORD = {password}
+    elastic_username = "{username}"
+    elastic_password = "{password}"
     ```
 
 4. Create docker containers for elastic search and kibana.
@@ -35,7 +35,10 @@
     docker-compose up
     ```
 
-5. Index data in elastic search. Run all the cells of *elastic_indexing.ipnyb*
+5. Index data in elastic search. 
+    ```bash
+    python ElasticIndexer.py
+    ```
 
 6. Run FastAPI server
     ```bash
@@ -44,4 +47,22 @@
 
 7. Go to http://localhost:8000/docs to test the API.
 
+
+
+---
+
+## How It Works
+
+
+**Content Based Filtering** is a type of recommendation generation system that used metadata of an item to find other similar items. The metadata for a movie would be its title, plot, cast, directors, genre, and so on. The metadata is then used to create a single document by combing them. The document in then encoded to a vector which represents that movie in the latent space. To generate recommendations for user that has liked a particular movie, the similarity is computed between that movie vector with all other movie vector. Most similar movie vectors can then be recommended to the users.
+
+## Outputs
+
+- Input: *The Lion King*
+
+![The Lion King](/Screenshots/the_lion_king.png)
+
+- Input: *Space Aliens*
+
+![Space Aliens](/Screenshots/space_aliens.png)
 
